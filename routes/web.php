@@ -27,7 +27,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-//use socialite and GoogleLoginController redirect and callback url
+//use socialite and GoogleLoginController redirect and callback urls
 Route::get('/auth/redirect', [GoogleLoginController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/auth/callback', [GoogleLoginController::class, 'handleGoogleCallback']);
 
