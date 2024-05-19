@@ -30,32 +30,3 @@ Route::middleware([
 //use socialite and GoogleLoginController redirect and callback url
 Route::get('/auth/redirect', [GoogleLoginController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/auth/callback', [GoogleLoginController::class, 'handleGoogleCallback']);
-
-
-/*//socialite
-
-Route::get('/auth/redirect', function () {
-    return Socialite::driver('google')->redirect();
-});
-Route::get('/auth/callback', function () {
-    $user = Socialite::driver('google')->user();
-dd($user);
-});
-
-
-Route::get('/auth/callback', function () {
-    $GoogleUser = Socialite::driver('google')->user();
-        
-    $user = User::updateOrCreate([
-        'github_id' => $GoogleUser->id,
-    ], [
-        'name' => $GoogleUser->name,
-        'email' => $GoogleUser->email,
-        'github_token' => $GoogleUser->token,
-        'github_refresh_token' => $GoogleUser->refreshToken,
-    ]);
- 
-    Auth::login($user);
- 
-    return redirect('/dashboard');
-});*/
