@@ -30,7 +30,7 @@ class GoogleLoginService{
 
                 // Log in the new user.
                 auth()->login($newUser, true);
-//test
+//test22
 
             }
 
