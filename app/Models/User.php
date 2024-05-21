@@ -59,4 +59,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function district()
+    {
+        return $this->hasOne(district::class,'id','district_id');
+        
+    }
 }

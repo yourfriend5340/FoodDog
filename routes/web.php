@@ -30,3 +30,6 @@ Route::middleware([
 //use socialite and GoogleLoginController redirect and callback url
 Route::get('/auth/redirect', [GoogleLoginController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/auth/callback', [GoogleLoginController::class, 'handleGoogleCallback']);
+
+
+Route::get('/users', [App\Http\Controllers\UserController::class, 'index']);

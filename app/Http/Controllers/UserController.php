@@ -8,6 +8,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     public function index(Request $request){
+        
         $userService = new UserService();
         $user = $userService->get();
         return response()->json(['data'=>$user],200);
